@@ -4,7 +4,6 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
-
 }
 .container {
     display: flex;
@@ -65,4 +64,3 @@ li {
     place-items: center;
     padding: 1em;
 }
-
