@@ -29,9 +29,30 @@
             <a href="#"><img class="bag" src="./image/cart.png" alt="Shopping Bag"></a>
         </div>
     </nav>
-    <h1>Breezyshine</h1><br/>
-    <h2>Welcome to Breezyshine clothing</h2><br/>
-    <h3> Featured products</h3><br/>
-    <h4> Product name</h4>
+    
+    <h1>Create User</h1>
+    <form action="/save_user" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Save">
+    </form>
+
+    
+    
+    
 </body>
 </html>
