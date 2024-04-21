@@ -1,66 +1,154 @@
-/* CSS for layout */
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: beige;
-    text-align: center;
-    font-size: 20px;
-    color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: beige;
+  text-align: center;
+  font-size: 18px;
+  color: rgb(0, 0, 0);
 }
-.items{
-    display: flex;
-    flex-direction: row;
-    
+
+.items {
+  display: flex;
+  flex-direction: row;
 }
-.items ul{
-    justify-content: center;
-    place-items: center;
-    list-style: none;
-    text-decoration: none;
+
+.items ul {
+  justify-content: center;
+  place-items: center;
+  list-style: none;
+  text-decoration: none;
 }
-.logo{
-    width: 7em; /* Adjust as needed */
-    height: 7em; /* Maintain aspect ratio */
+
+.logo {
+  width: 5em;
+  height: auto;
 }
-.Search-icon{
-    width: 1.5em;
-    height: 1.5em;
-margin-right: 1em;
+
+.Search-icon {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 1em;
 }
-.bag{
-    width: 1.5em;
-    height: 1.5em;
+
+.bag {
+  width: 1.5em;
+  height: 1.5em;
 }
+
 a {
-    color: rgb(56, 50, 50);
-    text-decoration: none; /* Tar bort understreck från alla länkar på sidan */
-    font-size: 1.2em;
+  color: rgb(56, 50, 50);
+  text-decoration: none;
+  font-size: 1.2em;
 }
-a:hover{
-    color: rgb(7, 7, 7);
 
+a:hover {
+  color: rgb(7, 7, 7);
 }
+
 li {
-    list-style: none;
-    margin: 1em;
-    padding: 0;
+  list-style: none;
+  margin: 1em;
+  padding: 0;
 }
 
-.navigation ul{
-    display: flex;
-    flex-direction: row;
+.navigation ul {
+  display: flex;
+  flex-direction: row;
 }
-.icons{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    place-items: center;
-    padding: 1em;
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Center vertically */
+  padding: 1em;
+}
+.space {
+  flex: 1; /* Occupy remaining space */
+}
+.icons a {
+  margin-right: 1em; /* Add spacing between icons */
+}
+
+.content {
+  display: flex;
+  justify-content: center; /* Center the content */
+  align-items: center; /* Center vertically */
+  flex: 1; /* Occupy remaining space */
+  text-align: center; /* Center content text */
+}
+
+.content img {
+  display: block;
+  margin: 1em auto; /* Center the image horizontally */
+}
+/* Style for the user list container */
+.user-container {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+}
+.user-list {
+  margin-top: 3em; /* Add some spacing from the previous element */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center vertically */
+  font-family: "Times New Roman", Times, serif;
+  font-size: x-small;
+  border: 2px solid beige;
+  border-radius: 1em;
+  padding: 1em;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* Style for each user entry */
+
+/* Style for the 'Remove User' buttons */
+button,
+.create-user-button {
+  background-color: #0050a7; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: rgb(244, 243, 240);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px; /* Add space between buttons */
+  width: fit-content; /* Adjust width to fit content */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+button {
+  place-items: center;
+  justify-self: center;
+}
+.user-list > div {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  justify-content: center;
+  place-items: center;
+}
+.user-list h2 {
+  text-align: left;
+  width: auto;
+  padding-right: 4em;
+  margin-left: 0em;
+}
+.user-info{
+    padding: 2em;
+}
+/* Hover effect for the 'Remove User' buttons */
+.user-list h2 + button:hover {
+  background-color: #07b6fb; /* Darker green */
+}
+
+.create-user-button:hover {
+  background-color: #07b6fb;
 }

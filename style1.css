@@ -1,0 +1,30 @@
+.fontSize {
+    font-size: 10px;
+
+
+}
+
+.formfontsize {
+    font-size: 20px;
+
+
+}
+
+.button {
+    text-align: right;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
