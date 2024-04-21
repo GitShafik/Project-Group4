@@ -25,3 +25,10 @@
     height: 50px;
     border-radius: 50%;
 }
+ button:hover {
+    background-color: #07b6fb; /* Darker green */
+  }
+  
+  button:hover {
+    background-color: #07b6fb;
+  }
