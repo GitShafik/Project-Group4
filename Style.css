@@ -152,3 +152,37 @@ button {
 .create-user-button:hover {
   background-color: #07b6fb;
 }
+/* Style for Save button */
+input[type="submit"][value="Save"] {
+  background-color: #0050a7; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: rgb(244, 243, 240);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px; /* Add space between buttons */
+  width: fit-content; /* Adjust width to fit content */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+} 
+
+
+/* Style for Sign in button */
+input[type="submit"][value="Sign in"] {
+  background-color: #0050a7; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: rgb(244, 243, 240);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px; /* Add space between buttons */
+  width: fit-content; /* Adjust width to fit content */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
