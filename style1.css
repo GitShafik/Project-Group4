@@ -1,30 +1,27 @@
-.fontSize {
-    font-size: 10px;
-
-
-}
+/* formstyling*/
 
 .formfontsize {
     font-size: 20px;
-
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
 
 }
 
-.button {
+/*styling for back to profile*/
+.backToProfile {
+    font-size: 20px;
+    padding: 5px, 5px;
     text-align: right;
+
+
 }
 
-.avatar {
+/* /*profilr pic styling */
+.profilePicture {
     vertical-align: middle;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-}
-
-/* Centered text */
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
