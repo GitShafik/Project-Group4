@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .container {
   display: flex;
   flex-direction: row;
@@ -65,39 +66,53 @@ li {
 .icons {
   display: flex;
   flex-direction: row;
-  align-items: center; /* Center vertically */
+  align-items: center;
+  /* Center vertically */
   padding: 1em;
 }
+
 .space {
-  flex: 1; /* Occupy remaining space */
+  flex: 1;
+  /* Occupy remaining space */
 }
+
 .icons a {
-  margin-right: 1em; /* Add spacing between icons */
+  margin-right: 1em;
+  /* Add spacing between icons */
 }
 
 .content {
   display: flex;
-  justify-content: center; /* Center the content */
-  align-items: center; /* Center vertically */
-  flex: 1; /* Occupy remaining space */
-  text-align: center; /* Center content text */
+  justify-content: center;
+  /* Center the content */
+  align-items: center;
+  /* Center vertically */
+  flex: 1;
+  /* Occupy remaining space */
+  text-align: center;
+  /* Center content text */
 }
 
 .content img {
   display: block;
-  margin: 1em auto; /* Center the image horizontally */
+  margin: 1em auto;
+  /* Center the image horizontally */
 }
+
 /* Style for the user list container */
 .user-container {
   display: flex;
   flex-direction: row;
   padding: 1em;
 }
+
 .user-list {
-  margin-top: 3em; /* Add some spacing from the previous element */
+  margin-top: 3em;
+  /* Add some spacing from the previous element */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center vertically */
+  align-items: center;
+  /* Center vertically */
   font-family: "Times New Roman", Times, serif;
   font-size: x-small;
   border: 2px solid beige;
@@ -105,12 +120,14 @@ li {
   padding: 1em;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
 /* Style for each user entry */
 
 /* Style for the 'Remove User' buttons */
 button,
 .create-user-button {
-  background-color: #0050a7; /* Green */
+  background-color: #0050a7;
+  /* Green */
   border: none;
   border-radius: 5px;
   color: rgb(244, 243, 240);
@@ -119,42 +136,52 @@ button,
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px; /* Add space between buttons */
-  width: fit-content; /* Adjust width to fit content */
+  margin-top: 10px;
+  /* Add space between buttons */
+  width: fit-content;
+  /* Adjust width to fit content */
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 }
+
 button {
   place-items: center;
   justify-self: center;
 }
-.user-list > div {
+
+.user-list>div {
   display: flex;
   flex-direction: row;
   padding: 1em;
   justify-content: center;
   place-items: center;
 }
+
 .user-list h2 {
   text-align: left;
   width: auto;
   padding-right: 4em;
   margin-left: 0em;
 }
-.user-info{
-    padding: 2em;
+
+.user-info {
+  padding: 2em;
 }
+
 /* Hover effect for the 'Remove User' buttons */
-.user-list h2 + button:hover {
-  background-color: #07b6fb; /* Darker green */
+.user-list h2+button:hover {
+  background-color: #07b6fb;
+  /* Darker green */
 }
 
 .create-user-button:hover {
   background-color: #07b6fb;
 }
+
 /* Style for Save button */
 input[type="submit"][value="Save"] {
-  background-color: #0050a7; /* Green */
+  background-color: #0050a7;
+  /* Green */
   border: none;
   border-radius: 5px;
   color: rgb(244, 243, 240);
@@ -163,25 +190,75 @@ input[type="submit"][value="Save"] {
   text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px; /* Add space between buttons */
-  width: fit-content; /* Adjust width to fit content */
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
-} 
-
-/* Style for Sign in button */
-input[type="submit"][value="Sign in"] {
-  background-color: #0050a7; /* Green */
-  border: none;
-  border-radius: 5px;
-  color: rgb(244, 243, 240);
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 10px; /* Add space between buttons */
-  width: fit-content; /* Adjust width to fit content */
+  margin-top: 10px;
+  /* Add space between buttons */
+  width: fit-content;
+  /* Adjust width to fit content */
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 }
+
+/* Style for Sign in button */
+input[type="submit"][value="Sign in"] {
+  background-color: #0050a7;
+  /* Green */
+  border: none;
+  border-radius: 5px;
+  color: rgb(244, 243, 240);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  /* Add space between buttons */
+  width: fit-content;
+  /* Adjust width to fit content */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+/* Starts edit.html styling part from here */
+/* formstyling*/
+
+.formfontsize {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+
+}
+
+/*styling for back to profile*/
+.backToProfile {
+  font-size: 20px;
+  padding: 5px, 5px;
+  text-align: right;
+
+
+}
+
+/* /*profilr pic styling */
+.profilePicture {
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+button:hover {
+  background-color: #07b6fb;
+
+  /* Darker green */
+}
+
+
+
+
+
+
+
+
+
+/*end of this part*/

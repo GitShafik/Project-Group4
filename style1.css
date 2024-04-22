@@ -21,12 +21,13 @@
 /* /*profilr pic styling */
 .profilePicture {
     vertical-align: middle;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
 }
 
 button:hover {
     background-color: #07b6fb;
+
     /* Darker green */
 }
