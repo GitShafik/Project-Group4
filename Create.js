@@ -1,5 +1,8 @@
 function validateForm() {
     let username = document.getElementById("username").value;
+    username.addEventListener("click", function () {
+        console.log("username clicked!");
+    })
     let firstname = document.getElementById("firstname").value;
     let  lastname = document.getElementById("lastname").value;
     let age = document.getElementById("age").value;
