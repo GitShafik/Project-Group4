@@ -63,12 +63,21 @@ li {
   flex-direction: row;
 }
 
+
 .icons {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  place-items: center;
   /* Center vertically */
   padding: 1em;
+}
+
+/*Edit box*/
+
+.Editbox {
+    text-align: right;
 }
 
 .space {
@@ -230,7 +239,7 @@ input[type="submit"][value="Sign in"] {
 
 }
 
-/*styling for back to profile*/
+/*styling for back to home link*/
 .backToProfile {
   font-size: 20px;
   padding: 5px, 5px;
@@ -253,12 +262,8 @@ button:hover {
   /* Darker green */
 }
 
-
-
-
-
-
-
-
+a.white {
+  color: white;
+}
 
 /*end of this part*/
