@@ -1,0 +1,21 @@
+{
+    "users": [
+      {
+        "firstname": "Basheerunisa",
+        "lastname": "Mohammed",
+        "age": 30,
+        "email":"basheerunisa5959@gmail.com",
+        "password":"Anjum59!"
+
+      },
+      
+      {
+        "firstname": "Afsha",
+        "lastname" :"Tarannum",
+        "age":3,
+        "email":"afsha21@gmail.com",
+        "password":"Afsha21!"
+      }
+      
+    ]
+  }
