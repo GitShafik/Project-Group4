@@ -31,52 +31,23 @@
             <a href="#"><img class="bag" src="./image/cart.png" alt="Shopping Bag"></a>
         </div>
     </nav>
+
     <div class="user-container">
 
         <div class="user-list">
             <!-- Type the user list code here -->
             <h1>All Users</h1>
-            <div>
-                <!-- Basheerunisa -->
-                <h2><a href="user.html?id=1">Basheerunisa</a></h2>
-                <button type="button">Remove user</button><br />
-            </div>
-
-            <div>
-                <!-- Gunjan Bhargava -->
-                <h2><a href="user.html?id=2">Gunjan Bhargava</a></h2>
-                <button type="button">Remove user</button><br />
-            </div>
-
-            <div>
-                <!-- Shafik Khan -->
-                <h2><a href="user.html?id=3">Shafik Khan</a></h2>
-                <button type="button" ">Remove user</button><br/>
-            </div>
-            <div>
-             <!-- Sirda Gulzar -->
-            <h2><a href=" user.html?id=4">Sirda Gulzar</a></h2>
-                    <button type="button">Remove user</button><br />
-            </div>
-
-            <div>
-                <!-- Tayyaba Tehseen -->
-                <h2><a href="user.html?id=5">Tayyaba Tehseen</a></h2>
-                <button type="button">Remove user</button><br />
-            </div>
-
-            <div>
-                <!-- Link to create a new user -->
-                <a href="create.html" class="create-user-button">Create User</a>
-            </div>
-        </div>
-        <div class="user-info"> 
-            <h1>
-             
-            </h1>
+            <form>
+                <input type="name" id="name" placeholder="name" />
+                <br />
+                <input type="number" id="age" placeholder="age" />
+                <br />
+                <button type="submit">View Profile</button>
+            </form>
         </div>
     </div>
-
+        <ul id="users"></ul>
+            <script src="Users.js"></script>
 </body>
 
 </html>
