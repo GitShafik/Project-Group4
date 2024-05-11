@@ -1,50 +1,49 @@
 {
-<<<<<<< HEAD
-    "Users": [
-      {
-        "id": "1",
-        "name": "Tayyaba",
-        "age": 30
-      },
-      {
-        "id": "2",
-        "name": "Basheerunisa",
-        "age": 30
-      },
-      {
-        "id": "3",
-        "name": "Sidra",
-        "age": "33"
-      },
-      {
-        "id": "4",
-        "name": "Gunjan",
-        "age": 30
-      },
-      {
-        "id": "5",
-        "name": "Shafik",
-        "age": 30
-      }
-=======
-    "users": [
-      {
-        "firstname": "Basheerunisa",
-        "lastname": "Mohammed",
-        "age": 30,
-        "email":"basheerunisa5959@gmail.com",
-        "password":"Anjum59!"
-
-      },
-      
-      {
-        "firstname": "Afsha",
-        "lastname" :"Tarannum",
-        "age":3,
-        "email":"afsha21@gmail.com",
-        "password":"Afsha21!"
-      }
-      
->>>>>>> 2e04e5cd312bdff40c34c373fd5566501b064e13
-    ]
-  }
+  "users": [
+    {
+      "id": "b3fa",
+      "username": "Fun",
+      "firstname": "Alice",
+      "lastname": "Shaw",
+      "age": "32",
+      "email": "shafiq.khann@yahoo.com",
+      "password": "1"
+    },
+    {
+      "id": "d3a7",
+      "username": "X",
+      "firstname": "David",
+      "lastname": "Drush",
+      "age": "32",
+      "email": "shafiq.khann@yahoo.com",
+      "password": "2"
+    },
+    {
+      "id": "85f6",
+      "username": "3x",
+      "firstname": "Trevor",
+      "lastname": "Woosh",
+      "age": "45",
+      "email": "shafiq.khann@yahoo.com",
+      "password": "3"
+    },
+    {
+      "id": "76ba",
+      "username": "x4",
+      "firstname": "Neymar",
+      "lastname": "extended",
+      "age": "55",
+      "email": "shafiq.khann@yahoo.com",
+      "password": "4"
+    },
+    {
+      "id": "fe61",
+      "username": "x6",
+      "firstname": "fench",
+      "lastname": "bouncer",
+      "age": "70",
+      "email": "shafiq.khann@yahoo.com",
+      "password": "s"
+    }
+  ]
+}

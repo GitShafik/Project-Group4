@@ -111,17 +111,20 @@ li {
 /* Style for the user list container */
 .user-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 1em;
 }
 
 .user-list {
   margin-top: 3em;
-  /* Add some spacing from the previous element */
+  /* Remove margin properties to move the box to the left */
+  /* margin-right: auto;
+  margin-left: auto; */
+  max-width:fit-content;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* Center vertically */
+  align-items: flex-start;
+  /* Align items to the left */
   font-family: "Times New Roman", Times, serif;
   font-size: x-small;
   border: 2px solid beige;
@@ -130,27 +133,33 @@ li {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+
+.user-list a {
+  font-size: xx-large; /* Make the font size larger */
+  margin-right: 10px; /* Add space between user text and button */
+}
+
+.user-list a:hover {
+  font-weight: bold; /* Make the font bold on hover */
+}
+
 /* Style for each user entry */
 
 /* Style for the 'Remove User' buttons */
 button,
 .create-user-button {
-  background-color: #0050a7;
-  /* Green */
+  background-color: #0457c4;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   color: rgb(244, 243, 240);
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px; /* Adjust font size */
   cursor: pointer;
   margin-top: 10px;
-  /* Add space between buttons */
-  width: fit-content;
-  /* Adjust width to fit content */
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
+  width: fit-content;
 }
 
 button {

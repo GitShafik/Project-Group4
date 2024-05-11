@@ -33,21 +33,15 @@
     </nav>
 
     <div class="user-container">
-
         <div class="user-list">
-            <!-- Type the user list code here -->
             <h1>All Users</h1>
-            <form>
-                <input type="name" id="name" placeholder="name" />
-                <br />
-                <input type="number" id="age" placeholder="age" />
-                <br />
-                <button type="submit">View Profile</button>
-            </form>
+            <ul id="users">
+                <!-- User information will be displayed here -->
+            </ul>
         </div>
+        <button onclick="location.href='Create.html'">Create User</button>
     </div>
-        <ul id="users"></ul>
-            <script src="Users.js"></script>
+    <script src="Users.js"></script>
 </body>
 
 </html>
