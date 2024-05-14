@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "project-group-4",
   "version": "1.0.0",
   "description": "",
@@ -11,9 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-=======
-  "dependencies": {
->>>>>>> 2e04e5cd312bdff40c34c373fd5566501b064e13
     "json-server": "^1.0.0-alpha.23"
   }
 }
