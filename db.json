@@ -39,22 +39,11 @@
       "password": "4"
     },
     {
-      "id": "fe61",
-      "username": "x6",
       "firstname": "fench",
-      "lastname": "bouncer",
+      "nickname": "sss",
       "age": "70",
-      "email": "shafiq.khann@yahoo.com",
-      "password": "s"
-    },
-    {
-      "id": "e8ed",
-      "username": "Iam",
-      "firstname": "Tayyaba ",
-      "lastname": "Tahseen",
-      "age": "31",
-      "email": "sam.tahsin92@gmail.com",
-      "password": "sadafag"
+      "bio": "sss",
+      "id": "fe61"
     }
   ]
 }
