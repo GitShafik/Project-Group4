@@ -52,33 +52,35 @@
 
         <!-- profile picture insertion -->
 
-        <Span class="formfontsize" id="profilePicInput">Profile picture: </Span>
+        <Span class="formfontsize" id="profilePicInput">Profile picture</Span>
+
         <img src="./image/profilepic.jpeg" alt="profile picture " class="profilePicture" class="container">
-        <button id="editButton">Edit</button>
+
+        <button id="editButton" onclick="updatePic()">Edit</button>
 
         <br>
 
         <!--creating form-->
 
 
-        <form class="updateForm" action="/save" method="POST">
+        <form id="updateForm">
 
             <div class="formfontsize">
-                Name:<input class="formfontsize" id="name" type="text" value="Tayyaba Tahseen" size="20" required />
+                <input class="formfontsize" id="name" type="text" Placeholder="Name" size="20" required />
                 <br>
                 <br>
-                Nickname: <input class="formfontsize" id="Nickname" type="text" value="sam" size="15" />
+                <input class="formfontsize" id="Nickname" type="text" Placeholder="Nickname" size="15" />
                 <br>
                 <br>
-                Age: <input class="formfontsize" id="Age" type="number" value="31" size="10" required />
+                <input class="formfontsize" id="Age" type="number" Placeholder="Age" size="10" required />
                 <br>
                 <br>
-                Bio : <input class="formfontsize" id="Bio" type="text" value="I love cooking" size="30px" />
+                <input class="formfontsize" id="Bio" type="text" Placeholder="Bio" size="30px" />
                 <br>
                 <br>
 
 
-                <button type="submit"><a class="white" href="Users.html">Save</a></button>
+                <button type="submit">Save</button>
 
 
 

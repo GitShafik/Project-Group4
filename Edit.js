@@ -1,104 +1,116 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Retrieve existing user data from localStorage
-    const userData = JSON.parse(localStorage.getItem('profile.html'));
+/*document.addEventListener("DOMContentLoaded", function () {
+    const updateForm = document.getElementById("updateForm");
 
-    if (userData) {
-        // Pre-fill the form with existing user data
-        document.getElementById('Name').value = userData.name;
-        document.getElementById('Nickname').value = userData.nickname || '';
-        document.getElementById('Age').value = userData.age;
-        document.getElementById('Bio').value = userData.bio || '';
-    }
+    // Fetch and display existing user data
+    const userId = 1; // Replace with the actual user ID you want to update
+    fetchUser(userId).then(user => {
+        document.getElementById("name").value = user.name;
+        document.getElementById("nickname").value = user.nickname;
+        document.getElementById("age").value = user.age;
+        document.getElementById("bio").value = user.bio;
+    }).catch(error => {
+        console.error("There was a problem fetching the user data:", error);
+    });
 
-    // Handle form submission
-    const form = document.querySelector('.updateForm');
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent default form submission
+    updateForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-        // Get updated values from the form
-        const updatedName = document.getElementById('Name').value.trim();
-        const updatedNickname = document.getElementById('Nickname').value.trim();
-        const updatedAge = document.getElementById('Age').value.trim();
-        const updatedBio = document.getElementById('Bio').value.trim();
-
-        // Perform form validation 
-        if (!updatedName || !updatedAge) {
-            alert("First name, last name, and age are required.");
-            return;
-        }
-
-        // Prepare updated user data
-        const updatedUserData = {
-
-            updatedName: updatedName,
-            nickname: updatedNickname,
-            age: updatedAge,
-            bio: updatedBio
+        const updatedData = {
+            name: document.getElementById("name").value,
+            nickname: document.getElementById("nickname").value,
+            age: document.getElementById("age").value,
+            bio: document.getElementById("bio").value
         };
 
-        // Save updated user data to localStorage
-        localStorage.setItem('profile.html', JSON.stringify(updatedUserData));
-        // Store user data in localStorage
-        localStorage.setItem('Users.html', JSON.stringify(formData));
-
-
+        updateUser(userId, updatedData)
+            .then(updatedUser => {
+                alert("User information updated successfully.");
+                window.location.href = "Users.html"; // Redirect after successful update
+            })
+            .catch(error => {
+                console.error("There was a problem updating the user:", error);
+                alert("Error updating user. Please try again later.");
+            });
     });
 
-    // Function to handle the replacement of form fields
-    document.querySelector('button').addEventListener('click', function () {
-
-        document.getElementById('Name').value = prompt("Enter new Name:", document.getElementById('Name').value);
-        document.getElementById('Nickname').value = prompt("Enter new Nickname:", document.getElementById('Nickname').value);
-        document.getElementById('Age').value = prompt("Enter new Age:", document.getElementById('Age').value);
-        document.getElementById('Bio').value = prompt("Enter new Bio:", document.getElementById('Bio').value);
-    });
-
-    // Handle clicking the Edit button to change profile picture
-    const editButton = document.getElementById('editButton');
-    const profilePicInput = document.getElementById('profilePicInput');
-
-    editButton.addEventListener('click', function () {
-        profilePicInput.click(); // Trigger the click event of the profile picture input
-    });
-
-    // Handle profile picture change
-    profilePicInput.addEventListener('change', function (event) {
-        const file = event.target.files[0]; // Get the selected file
-
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                const imgElement = document.getElementById('profilePic');
-                imgElement.src = e.target.result; // Update the src attribute of the image element with the new image data
-            }
-            reader.readAsDataURL(file); // Read the selected file as a data URL
+    async function fetchUser(userId) {
+        const response = await fetch(`http://localhost:3000/users/${userId}`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
+        return response.json();
+    }
+
+    async function updateUser(userId, updatedData) {
+        const response = await fetch(`http://localhost:3000/users/${userId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(updatedData)
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    }
+});*/
+const updateForm = document.getElementById("updateForm");
+const urlParams = new URLSearchParams(window.location.search);
+const userId = urlParams.get('id');
+
+// Fetch and populate the form with user data
+if (userId) {
+    fetchUser(userId).then(user => {
+        console.log(user);
+        document.getElementById("name").value = user.firstname;
+        document.getElementById("Age").value = user.age;
+    }).catch(error => {
+        console.error("There was a problem fetching the user data:", error);
     });
-    fetch('http://localhost:3000/users', {
-        method: 'POST',
+}
+
+updateForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const updatedData = {
+        firstname: document.getElementById("name").value,
+        nickname: document.getElementById("Nickname").value,
+        age: document.getElementById("Age").value,
+        bio: document.getElementById("Bio").value
+    };
+    console.log(updatedData)
+    updateUser(userId, updatedData)
+        .then(updatedUser => {
+            alert("User information updated successfully.");
+            // window.location.href = "Users.html"; // Redirect after successful update
+        })
+        .catch(error => {
+            console.error("There was a problem updating the user:", error);
+            alert("Error updating user. Please try again later.");
+        });
+});
+
+async function fetchUser(userId) {
+    const response = await fetch(`http://localhost:3000/users/${userId}`);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.json();
+}
+
+async function updateUser(userId, updatedData) {
+    console.log("about to update", userId, updatedData)
+    const response = await fetch(`http://localhost:3000/users/${userId}`, {
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Form data sent successfully:', data);
-            // Optionally, you can redirect the user to another page or show a success message
-        })
-        .catch(error => {
-            console.error('There was a problem with your fetch operation:', error);
-            // Handle errors, show error message to the user, etc.
-        });
-
-
-
-
-
-
-});
+        body: JSON.stringify(updatedData)
+    });
+    console.log("response", response.status)
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return response.json();
+}
