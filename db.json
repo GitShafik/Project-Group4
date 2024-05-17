@@ -39,11 +39,21 @@
       "password": "4"
     },
     {
+<<<<<<< HEAD
       "firstname": "fench",
       "nickname": "sss",
       "age": "70",
       "bio": "sss",
       "id": "fe61"
+=======
+      "id": "513b",
+      "username": "x7",
+      "firstname": "Chloe",
+      "lastname": "Fury",
+      "age": "45",
+      "email": "shafiq.khann@yahoo.com",
+      "password": "2"
+>>>>>>> shafik
     }
   ]
 }

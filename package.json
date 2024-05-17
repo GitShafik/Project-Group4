@@ -9,7 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.19.2",
 
     "mysql2": "^3.9.7"
@@ -17,4 +19,11 @@
 }
 
     
+=======
+
+    "json-server": "^1.0.0-alpha.23"
+  }
+  }
+
+>>>>>>> 397fe6b7770b6cd6d358628f8456a7b190e6a365
 
