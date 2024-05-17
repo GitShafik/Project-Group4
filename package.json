@@ -1,5 +1,26 @@
 {
+<<<<<<< HEAD
   "dependencies": {
     "json-server": "^1.0.0-beta.0"
   }
 }
+=======
+  "name": "project-group-4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Users.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  
+  "dependencies": {
+
+    "json-server": "^1.0.0-alpha.23"
+  }
+  }
+
+
+>>>>>>> ffd8ed2a4f496dd9da3b58feedd472b4b121dcd0
