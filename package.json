@@ -1,22 +1,5 @@
 {
-  "name": "project-group-4",
-  "version": "1.0.0",
-  "description": "",
-  "main": "Users.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2",
-<<<<<<< HEAD
-    "mysql2": "^3.9.7"
+    "json-server": "^1.0.0-beta.0"
   }
 }
-=======
-    "devDependencies": "json-server",
-    "^1.0.0-alpha.23"
-  }
->>>>>>> 9ff6dab8c5b225946057f8708d719ef09bca9006
