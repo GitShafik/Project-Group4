@@ -30,7 +30,7 @@ form.addEventListener('submit', function(event) {
         password
     };
 
-    fetch('http://localhost:3000/users', {
+    fetch('http://localhost:4000/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

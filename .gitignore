@@ -1,1 +1,4 @@
 node_modules
+DB.env
+Package-lock.json
+package.json
