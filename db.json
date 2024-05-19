@@ -53,9 +53,12 @@
       "age": "45",
       "email": "shafiq.khann@yahoo.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
       "password": "2"
 >>>>>>> shafik
 =======
+=======
+>>>>>>> shafik
       "password": "s"
     },
     {
@@ -66,6 +69,13 @@
       "age": "2",
       "email": "shafiq.khann@yahoo.com",
       "password": "1"
+<<<<<<< HEAD
+>>>>>>> shafik
+=======
+=======
+      "password": "2"
+>>>>>>> shafik
+>>>>>>> ffd8ed2a4f496dd9da3b58feedd472b4b121dcd0
 >>>>>>> shafik
     }
   ]

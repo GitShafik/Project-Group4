@@ -1,11 +1,22 @@
 node_modules
 <<<<<<< HEAD
-db.json
-package-lock.json
-package.json
-.DS_Store
+<<<<<<< HEAD
 =======
 DB.env
 Package-lock.json
 package.json
+=======
+>>>>>>> shafik
+db.json
+package-lock.json
+package.json
+.DS_Store
+<<<<<<< HEAD
+=======
+DB.env
+Package-lock.json
+package.json
+>>>>>>> shafik
+=======
+>>>>>>> ffd8ed2a4f496dd9da3b58feedd472b4b121dcd0
 >>>>>>> shafik
