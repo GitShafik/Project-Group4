@@ -1,4 +1,11 @@
 node_modules
+<<<<<<< HEAD
 DB.env
 Package-lock.json
 package.json
+=======
+db.json
+package-lock.json
+package.json
+.DS_Store
+>>>>>>> ffd8ed2a4f496dd9da3b58feedd472b4b121dcd0
