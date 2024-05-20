@@ -3,3 +3,4 @@ DB.env
 Package-lock.json
 package.json
 .DS_Store
+db.json
