@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     "express": "^4.19.2",
 
@@ -23,6 +24,22 @@
 
     
   
+=======
+<<<<<<< HEAD
+    "express": "^4.19.2",
+    "json-server": "^1.0.0-beta.0",
+    "mysql2": "^3.9.7"
+  }
+}
+=======
+
+    "json-server": "^1.0.0-alpha.23"
+  }
+  }
+
+
+>>>>>>> ffd8ed2a4f496dd9da3b58feedd472b4b121dcd0
+>>>>>>> ba9db804840b5995bffd863fb3aa17fb430d9e0c
 =======
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
