@@ -1,5 +1,3 @@
-
-
 .container {
   display: flex;
   flex-direction: row;
@@ -32,7 +30,6 @@
   border-radius: 80px;
   padding: 1px;
   background-color: beige
-
 }
 
 .Search-icon {
@@ -81,7 +78,7 @@ li {
 /*Edit box*/
 
 .Editbox {
-    text-align: right;
+  text-align: right;
 }
 
 .space {
@@ -124,7 +121,7 @@ li {
   /* Remove margin properties to move the box to the left */
   /* margin-right: auto;
   margin-left: auto; */
-  max-width:fit-content;
+  max-width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -139,12 +136,15 @@ li {
 
 
 .user-list a {
-  font-size: xx-large; /* Make the font size larger */
-  margin-right: 10px; /* Add space between user text and button */
+  font-size: xx-large;
+  /* Make the font size larger */
+  margin-right: 10px;
+  /* Add space between user text and button */
 }
 
 .user-list a:hover {
-  font-weight: bold; /* Make the font bold on hover */
+  font-weight: bold;
+  /* Make the font bold on hover */
 }
 
 /* Style for each user entry */
@@ -159,7 +159,8 @@ button,
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  font-size: 14px; /* Adjust font size */
+  font-size: 14px;
+  /* Adjust font size */
   cursor: pointer;
   margin-top: 10px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -220,6 +221,12 @@ input[type="submit"][value="Save"] {
 
 }
 
+/* Hover effect for save  button */
+input[type="submit"][value="Save"]:hover {
+  background-color: #07b6fb;
+  transform: scale(1.05);
+}
+
 /* Style for Sign in button */
 input[type="submit"][value="Sign in"] {
   background-color: #0050a7;
@@ -240,15 +247,23 @@ input[type="submit"][value="Sign in"] {
 
 }
 
-/* Starts edit.html styling part from here */
+/* Hover effect for Sign in button */
+input[type="submit"][value="Sign in"]:hover {
+  background-color: #07b6fb;
+  transform: scale(1.05);
+}
+
+
+/*------------------------------ Starts edit.html styling part from here *------------------------/
+
 /* formstyling*/
 
 .formfontsize {
   font-size: 20px;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
+  padding-top: 2px;
+  padding-right: 2px;
+  padding-bottom: 2px;
+  padding-left: 2px;
 
 }
 
@@ -261,22 +276,82 @@ input[type="submit"][value="Sign in"] {
 
 }
 
-/* /*profilr pic styling */
+/* Style for all input fields in the form*/
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+textarea {
+  border: 1px solid #000;
+  /* Solid black border */
+  border-radius: 5px;
+  /* Rounded corners */
+  padding: 5px;
+  /* Padding inside the fields */
+}
+
+/* Specific styles for the textarea */
+textarea {
+  height: 100px;
+  /* Set a specific height for the textarea */
+}
+
+/* Change border on focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #007BFF;
+  /* Blue border on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  /* Add a blue shadow on focus */
+}
+
+/*profile pic style*/
+.profilePictureContainer {
+  position: relative;
+  display: inline-block;
+  max-width: 200px;
+}
+
 .profilePicture {
-  vertical-align: middle;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-button:hover {
-  background-color: #07b6fb;
-
-  /* Darker green */
-}
-
-a.white {
+.editButton {
+  position: absolute;
+  bottom: 0;
+  left: 120%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #0457c4;
   color: white;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: #000;
 }
+
+.editButton:hover {
+  background-color: #07b6fb;
+}
+
+
+.saveBox:hover {
+  background-color: #07b6fb;
+}
+
+/*-------Style for profile page -------*/
+
+/* Hover effect for edit button */
+.edit:hover {
+  background-color: #07b6fb;
+  transform: scale(1.05);
+}
+
+
+
+
 
 /*end of this part*/

@@ -39,7 +39,7 @@
     <div>
         <!--edit profile starts from-->
         <br>
-        <br>
+
 
         <a href="Start.html"> <b>
                 <div class="backToProfile">Go back home</div>
@@ -48,39 +48,95 @@
 
 
 
-        <h2><b>Basic Information</b></h2><br>
+        <h2><b>Basic Information</b></h2>
 
         <!-- profile picture insertion -->
 
-        <Span class="formfontsize" id="profilePicInput">Profile picture</Span>
+        <!-- <Span class="formfontsize" id="profilePicInput">Profile picture</Span>
 
-        <img src="profilepic.jpeg" alt="profile picture " class="profilePicture" class="container">
+        <img src="profilepic.jpeg" alt="profile picture " class="profilePicture" class="container">-->
 
-        <button id="editButton" onclick="updatePic()">Edit</button>
 
-        <br>
+        <!-- <h2>Profile Picture Upload</h2>-->
+        <!-- <input type="file" id="profilePicInput" accept="image/*">
+        <div id="imagePreview"></div>-->
+
+
+        <!-- <button id="editButton" onclick="updatePic()">Edit</button>-->
 
         <!--creating form-->
+
+        <!-- Profile picture insertion with choose file button -->
+        <!-- Profile picture insertion with choose file button -->
+        <div class="profilePictureContainer">
+            <span><img src="profilepic.jpeg" alt="Profile Picture" class="profilePicture"> <button class="editButton"
+                    onclick="document.getElementById('profilePicInput').click();">Edit</button></span>
+            <input type="file" id="profilePicInput" accept="image/*" style="display: none;">
+        </div>
+
+
 
 
         <form id="updateForm">
 
             <div class="formfontsize">
-                <input class="formfontsize" id="name" type="text" Placeholder="Name" size="20" required />
+
+
+                <label for="username">User Name:</label>
+                <input class="formfontsize" type="text" id="username" name="username" required>
                 <br>
                 <br>
-                <input class="formfontsize" id="Nickname" type="text" Placeholder="Nickname" size="15" />
+                <div>
+                    <label for="firstname">First Name:</label>
+                    <input class="formfontsize" type="text" id="firstname" name="firstname" required>
+                    <br><br>
+                    <label for="lastname">Last Name:</label>
+                    <input class="formfontsize" type="text" id="lastname" name="lastname" required>
+
+                </div>
                 <br>
-                <br>
-                <input class="formfontsize" id="Age" type="number" Placeholder="Age" size="10" required />
-                <br>
-                <br>
-                <input class="formfontsize" id="Bio" type="text" Placeholder="Bio" size="30px" />
+                <label for="age">Age:</label>
+                <input class="formfontsize" type="number" id="age" name="age" required>
+                <br><br>
+                <label for="Nickname">Nickname:</label>
+                <input class="formfontsize" class="formfontsize" id="nickname" type="text" />
                 <br>
                 <br>
 
+                <label for="email">Email:</label>
+                <input class="formfontsize" type="email" id="email" name="email" required>
+                <br>
+                <br>
 
-                <button type="submit">Save</button>
+                <label for="password">Password:</label>
+                <input class="formfontsize" type="password" id="password" name="password" required>
+                <br>
+                <br>
+                <label for="Bio">Bio:</label>
+                <input class="formfontsize" id="bio" type="text" />
+
+                <br>
+                <br>
+                <button class="saveBox" type="submit">Save</button>
+
+
+
+
+                <!--  <input class="formfontsize" id="name" type="text" size="20" required />
+                <br>
+                <br>
+                <label for="Nickname">Nickname:</label>
+                <input class="formfontsize" id="Nickname" type="text" size="15" />
+                <br>
+                <br>
+                <label for="Age">Age:</label>
+                <input class="formfontsize" id="Age" type="number" size="10" required />
+                <br>
+                <br>
+                <label for="Bio">Bio:</label>
+                <input class="formfontsize" id="Bio" type="text" size="30px" />
+                <br>
+                <br>   -->
 
 
 
