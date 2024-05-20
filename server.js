@@ -11,9 +11,9 @@ async function connectDB() {
   try {
     connection = await mysql.createConnection({
       user: "root",
-      password: "root",
+      password: "Mystery12345",
       host: "localhost",
-      database: "users",
+      database: "breezy-users",
     });
   } catch (error) {
     console.error("Something went wrong with connecting to db", error);
@@ -41,6 +41,6 @@ app.post("/users", async function (req, res) {
   }
 });
 
-app.listen(3000, function () {
-  console.log("started listeing on localhost:3000");
+app.listen(5000, function () {
+  console.log("started listeing on localhost:5000");
 });
