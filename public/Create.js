@@ -13,7 +13,7 @@ form.addEventListener('submit', function(event) {
         }
         const users = await response.json();
         return users;
-
+    }
     // Get form inputs
     const username = form.elements['username'].value;
     const firstname = form.elements['firstname'].value;
@@ -77,7 +77,7 @@ form.addEventListener('submit', function(event) {
 
         // Append the list item to the user list
         ul.appendChild(li);
-    }
+    },
 
     function showEditForm(user, li) {
         // Create a form for editing user details
@@ -125,7 +125,7 @@ form.addEventListener('submit', function(event) {
 
         // Append the form to the list item
         li.appendChild(form);
-    }
+    },
 
     async function updateUser(userId, updatedData) {
         const response = await fetch(`http://localhost:5000/users/${userId}`, {
