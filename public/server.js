@@ -1,6 +1,6 @@
 const express = require("express");
 const mysql = require("mysql2/promise");
-const port = 3000;
+const port = 5000;
 const app = express();
 
 app.use(express.static("public"));
@@ -11,7 +11,7 @@ async function connectDB() {
   try {
     connection = await mysql.createConnection({
       user: "root",
-      password: "root",
+      password: "Anjum5951!",
       host: "localhost",
       database: "users",
     });
@@ -41,6 +41,6 @@ app.post("/users", async function (req, res) {
   }
 });
 
-app.listen(3000, function () {
-  console.log("started listeing on localhost:3000");
+app.listen(5000, function () {
+  console.log("started listeing on localhost:5000");
 });

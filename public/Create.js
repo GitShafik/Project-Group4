@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
 
     async function getAllUsers() {
-        const response = await fetch("http://localhost:3000/users");
+        const response = await fetch("http://localhost:5000/users");
         if (!response.ok) {
             throw new Error("Network response was not ok");
         }
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     async function updateUser(userId, updatedData) {
-        const response = await fetch(`http://localhost:3000/users/${userId}`, {
+        const response = await fetch(`http://localhost:5000/users/${userId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
