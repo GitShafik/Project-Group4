@@ -52,7 +52,20 @@
       "lastname": "Fury",
       "age": "45",
       "email": "shafiq.khann@yahoo.com",
+<<<<<<< HEAD
       "password": "2"
+>>>>>>> shafik
+=======
+      "password": "s"
+    },
+    {
+      "id": "8403",
+      "username": "ss",
+      "firstname": "ss",
+      "lastname": "ss",
+      "age": "2",
+      "email": "shafiq.khann@yahoo.com",
+      "password": "1"
 >>>>>>> shafik
     }
   ]
