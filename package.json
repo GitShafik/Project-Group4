@@ -11,12 +11,19 @@
   "author": "Shafik Khan",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
 
+=======
+    "dotenv": "^16.4.5",
+>>>>>>> ea9268ac71e2f2e287b62959bbe0c76017c7820b
     "express": "^4.19.2",
 
     "mysql2": "^3.9.7"
   }
 }
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> ea9268ac71e2f2e287b62959bbe0c76017c7820b
