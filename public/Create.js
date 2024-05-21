@@ -128,7 +128,7 @@ form.addEventListener('submit', function(event) {
     },
 
     async function updateUser(userId, updatedData) {
-        const response = await fetch(`http://localhost:5000/users/${userId}`, {
+        const response = await fetch(`http://localhost:6000/users/${userId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -136,7 +136,7 @@ form.addEventListener('submit', function(event) {
             body: JSON.stringify(updatedData)
         });
 
-    fetch('http://localhost:5000/users', {
+    fetch('http://localhost:6000/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
