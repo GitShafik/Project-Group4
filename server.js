@@ -41,6 +41,6 @@ app.post("/users", async function (req, res) {
   }
 });
 
-app.listen(6000, function () {
-  console.log("started listeing on localhost:6000");
+app.listen(3500, function () {
+  console.log("started listeing on localhost:3500");
 });
