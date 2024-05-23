@@ -28,6 +28,12 @@ app.get("/users", async function (req, res) {
   res.json(users);
 });
 
+app.get("/users/:id", async function (req, res) {
+  const [users] = await connection.query("SELECT * FROM users");
+  res.json(users);
+});
+
+
 app.post("/users", async function (req, res) {
   const newUser = req.body;
   const query = `INSERT INTO users (Name, Age) VALUES ('${newUser.name}', ${newUser.age})`;
