@@ -96,7 +96,12 @@ async function updateUser(userId, updatedData) {
     }
     return await response.json();
 }
-
+document.addEventListener('DOMContentLoaded', function () {
+    const queryString = window.location.search;
+    const params = new URLSearchParams(queryString);
+    const id = params.get('id');
+    // Perform any actions based on the selected ID, such as pre-filling form fields
+});
 
 
 
