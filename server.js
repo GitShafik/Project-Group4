@@ -52,7 +52,7 @@ app.listen(3500, function () {
 });*/
 
 
-//---the below code is working properly for edit html please let me know if you want to chnage the code ------------------------------------------------------------------------------------------------------------
+//---the below code is working properly and it suppose to work for other html files as well---------------------------------------------------------------//
 
 
 const express = require("express");
