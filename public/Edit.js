@@ -33,14 +33,14 @@ console.log(userId)
 // Fetch and populate the form with user data
 if (userId) {
     fetchUser(userId).then(user => {
-        console.log(user);
+
         document.getElementById("username").value = user.username;
         document.getElementById("firstname").value = user.firstname;
         document.getElementById("lastname").value = user.lastname;
         document.getElementById("age").value = user.age;
         document.getElementById("email").value = user.email;
         document.getElementById("password").value = user.password;
-
+        console.log(user);
     }).catch(error => {
         console.error("There was a problem fetching the user data:", error);
     });
@@ -73,28 +73,28 @@ updateForm.addEventListener("submit", function (event) {
 });
 
 async function fetchUser(userId) {
-    const response = await fetch(`http://localhost:5000/users/${userId}`);
-    console.log(response.start)
+    const response = await fetch(`http://localhost:3500/users/${userId}`);
+    //console.log(response.status)
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
-    return response.json();
+    return await response.json();
 }
 
 async function updateUser(userId, updatedData) {
-    console.log("about to update", userId, updatedData)
-    const response = await fetch(`http://localhost:5000/users/${userId}`, {
+    //console.log("about to update", userId, updatedData)
+    const response = await fetch(`http://localhost:3500/users/${userId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(updatedData)
     });
-    console.log("response", response.status)
+    //console.log("response", response.status)
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
-    return response.json();
+    return await response.json();
 }
 
 
