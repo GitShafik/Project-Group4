@@ -3,9 +3,7 @@ console.log("Query string:", queryString); // Check the query string
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 console.log("ID:", id); // Check the value of the extracted ID
-
 async function getUser(id) {
-<<<<<<< HEAD
   try {
     const response = await fetch(`http://localhost:3500/users/${id}`);
     if (!response.ok) {
@@ -17,13 +15,7 @@ async function getUser(id) {
     console.error('Error fetching user data:', error);
     return null; // or handle the error in a different way
   }
-=======
-  const response = await fetch(`http://localhost:3500/users/${id}`);
-  const user = await response.json();
-  return user;
->>>>>>> shafik
 }
-
 async function main() {
   if (id) {
     const user = await getUser(id);
@@ -41,7 +33,6 @@ async function main() {
     console.error('ID parameter is undefined'); // Handle case where ID parameter is undefined
   }
 }
-
 main();
 document.getElementById('editButton').addEventListener('click', function () {
   const queryString = window.location.search;
@@ -49,3 +40,8 @@ document.getElementById('editButton').addEventListener('click', function () {
   const id = params.get('id');
   window.location.href = `Edit.html?id=${id}`; // Redirect to the edit page with the selected ID
 });
+
+
+
+
+

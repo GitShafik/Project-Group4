@@ -36,18 +36,6 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
         bio
     };
 
-<<<<<<< HEAD
-    // Send data to the server
-    try {
-        const response = await fetch('http://localhost:3500/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        });
-
-=======
 
         // Create a link to the user's profile
         const a = document.createElement("a");
@@ -153,7 +141,6 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
     })
     .then(response => {
 
->>>>>>> 2f9bca541979139ce1490039c03af1a74be37bcd
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
