@@ -40,8 +40,3 @@ document.getElementById('editButton').addEventListener('click', function () {
   const id = params.get('id');
   window.location.href = `Edit.html?id=${id}`; // Redirect to the edit page with the selected ID
 });
-
-
-
-
-
