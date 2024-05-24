@@ -277,7 +277,7 @@ input[type="email"],
 input[type="number"],
 input[type="password"],
 textarea {
-  border: 1px solid #232323;
+  border: 0.5px solid #232323;
   /* Solid black border */
   border-radius: 5px;
   /* Rounded corners */
@@ -367,9 +367,6 @@ textarea:focus {
   background-color: #07b6fb;
   transform: scale(1.05);
 }
-
-
-
 
 
 /*end of this part*/
