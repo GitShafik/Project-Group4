@@ -62,8 +62,8 @@ app.post("/users", async (req, res) => {
   }
 });
 
-const server = app.listen(5000, () => {
-  console.log("Server started listening on localhost:5000");
+const server = app.listen(3500, () => {
+  console.log("Server started listening on localhost:3500");
 });
 
 // Gracefully shutdown the server

@@ -3,7 +3,7 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
 async function getUser(id) {
-  const response = await fetch(`http://localhost:3000/users/${id}`);
+  const response = await fetch(`http://localhost:3500/users/${id}`);
   const user = await response.json();
   return user;
 }

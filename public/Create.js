@@ -1,6 +1,15 @@
 document.getElementById('userForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
+
+    async function getAllUsers() {
+        const response = await fetch("http://localhost:3500/users");
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const users = await response.json();
+        return users;
+    }
     // Get form inputs
     const username = document.getElementById('username').value;
     const firstname = document.getElementById('firstname').value;
@@ -14,6 +23,7 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
     if (!username || !firstname || !lastname || !age || !email || !password) {
         alert('Please fill in all fields.');
         return;
+
     }
 
     // Form data object
@@ -28,7 +38,7 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
 
     // Send data to the server
     try {
-        const response = await fetch('http://localhost:5000/users', {
+        const response = await fetch('http://localhost:3500/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -1,4 +1,4 @@
-/*document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const updateForm = document.getElementById("updateForm");
 
     // Fetch and display existing user data
@@ -34,7 +34,7 @@
     });
 
     async function fetchUser(userId) {
-        const response = await fetch(`http://localhost:3000/users/${userId}`);
+        const response = await fetch(`http://localhost:3500/users/${userId}`);
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -42,7 +42,7 @@
     }
 
     async function updateUser(userId, updatedData) {
-        const response = await fetch(`http://localhost:3000/users/${userId}`, {
+        const response = await fetch(`http://localhost:3500/users/${userId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -92,7 +92,7 @@ updateForm.addEventListener("submit", function (event) {
 });
 
 async function fetchUser(userId) {
-    const response = await fetch(`http://localhost:5000/users/${userId}`);
+    const response = await fetch(`http://localhost:3500/users/${userId}`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
@@ -101,7 +101,7 @@ async function fetchUser(userId) {
 
 async function updateUser(userId, updatedData) {
     console.log("about to update", userId, updatedData)
-    const response = await fetch(`http://localhost:5000/users/${userId}`, {
+    const response = await fetch(`http://localhost:3500/users/${userId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
