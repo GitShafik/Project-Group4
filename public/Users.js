@@ -16,7 +16,7 @@ getAllUsers()
 
 
 async function getAllUsers() {
-  const response = await fetch("http://localhost:5000/users");
+  const response = await fetch("http://localhost:3500/users");
   if (!response.ok) {
       throw new Error("Network response was not ok");
   }
@@ -58,7 +58,7 @@ function removeUser(userId) {
   }
 
   // Send a request to the backend to remove the user from the database
-  fetch(`http://localhost:5000/users/${userId}`, {
+  fetch(`http://localhost:3500/users/${userId}`, {
       method: 'DELETE'
   })
   .then(response => {
