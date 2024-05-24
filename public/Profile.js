@@ -5,6 +5,7 @@ const id = params.get("id");
 console.log("ID:", id); // Check the value of the extracted ID
 
 async function getUser(id) {
+<<<<<<< HEAD
   try {
     const response = await fetch(`http://localhost:3500/users/${id}`);
     if (!response.ok) {
@@ -16,6 +17,11 @@ async function getUser(id) {
     console.error('Error fetching user data:', error);
     return null; // or handle the error in a different way
   }
+=======
+  const response = await fetch(`http://localhost:3500/users/${id}`);
+  const user = await response.json();
+  return user;
+>>>>>>> shafik
 }
 
 async function main() {

@@ -35,31 +35,6 @@ app.get("/users", async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
-app.post("/users", async (req, res) => {
-  const { username, firstname, lastname, age, email, bio } = req.body;
-
-  if (!username || !firstname || !lastname || !email) {
-    return res.status(400).json({ error: "Please fill in all required fields." });
-  }
-
-  const query = "INSERT INTO users (username, firstname, lastname, age, email, bio) VALUES (?, ?, ?, ?, ?, ?)";
-  const values = [username, firstname, lastname, age, email, bio];
-
-  try {
-    const [result] = await connection.execute(query, values);
-    res.status(201).json({ 
-      user_id: result.insertId, 
-      username, 
-      firstname, 
-      lastname, 
-      age, 
-      email, 
-      bio 
-    });
-  } catch (error) {
-    console.error("Error inserting user:", error);
-=======
 app.get("/users/:id", async function (req, res) {
   const [users] = await connection.query("SELECT * FROM users");
   res.json(users);
@@ -75,14 +50,18 @@ app.post("/users", async function (req, res) {
       .status(201)
       .json({ ID: result.insertId, Name: newUser.name, Age: newUser.age });
   } else {
->>>>>>> 2f9bca541979139ce1490039c03af1a74be37bcd
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const server = app.listen(5000, () => {
   console.log("Server started listening on localhost:5000");
+=======
+const server = app.listen(3500, () => {
+  console.log("Server started listening on localhost:3500");
+>>>>>>> shafik
 });
 
 // Gracefully shutdown the server
@@ -205,14 +184,3 @@ app.listen(3500, function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
->>>>>>> 2f9bca541979139ce1490039c03af1a74be37bcd
