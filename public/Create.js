@@ -36,7 +36,7 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
         bio
     };
 
-<<<<<<< HEAD
+
     // Send data to the server
     try {
         const response = await fetch('http://localhost:3500/users', {
@@ -47,7 +47,7 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
             body: JSON.stringify(formData)
         });
 
-=======
+
 
         // Create a link to the user's profile
         const a = document.createElement("a");
@@ -86,6 +86,8 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
         // Append the list item to the user list
         ul.appendChild(li);
     },
+
+    
 
     function showEditForm(user, li) {
         // Create a form for editing user details
@@ -133,7 +135,7 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
 
         // Append the form to the list item
         li.appendChild(form);
-    },
+    }
 
     async function updateUser(userId, updatedData) {
         const response = await fetch(`http://localhost:3500/users/${userId}`, {
@@ -153,17 +155,19 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
     })
     .then(response => {
 
->>>>>>> 2f9bca541979139ce1490039c03af1a74be37bcd
+
+
         if (!response.ok) {
             throw new Error('Network response was not ok');
-        }
-
+      }
+    }
         const data = await response.json();
         console.log('Form data sent successfully:', data);
         alert('User created successfully');
         // Optionally, redirect or show success message
-    } catch (error) {
+    },catch (error)=> {
         console.error('There was a problem with your fetch operation:', error);
         alert('Failed to create user. Please try again.');
     }
 });
+})
