@@ -16,7 +16,16 @@
     "express": "^4.19.2",
     "json-server": "^1.0.0-alpha.23",
     "mysql": "^2.18.1",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    "mysql2": "^3.9.7",
+    "selenium-webdriver": "^4.21.0"
+=======
+=======
+>>>>>>> 2f9bca541979139ce1490039c03af1a74be37bcd
+>>>>>>> shafik
     "mysql2": "^3.9.7"
+>>>>>>> 3b1b36e9b6a99b6553a77679e0aa60c5b8d8acfa
   }
 }
-  
