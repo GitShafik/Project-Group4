@@ -2,7 +2,7 @@
 const form = document.querySelector('form');
 
 // Add an event listener for the form submission
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
 
@@ -41,43 +41,43 @@ form.addEventListener('submit', function(event) {
     };
 
 
-        // Create a link to the user's profile
-        const a = document.createElement("a");
-        a.setAttribute("href", `profile.html?id=${user.id}`);
-        a.textContent = user.firstname; // Display only the first name as the link text
+    // Create a link to the user's profile
+    const a = document.createElement("a");
+    a.setAttribute("href", `profile.html?id=${user.id}`);
+    a.textContent = user.firstname; // Display only the first name as the link text
 
-        // Create a button to remove the user
-        const removeButton = document.createElement("button");
-        removeButton.textContent = "Remove";
-        removeButton.addEventListener("click", () => {
-            // Call a function to remove the user from the server
-            removeUser(user.id)
-                .then(() => {
-                    // Remove the list item from the DOM if the removal was successful
-                    li.remove();
-                })
-                .catch(error => {
-                    console.error("There was a problem removing the user:", error);
-                    // Handle errors, show error message to the user, etc.
-                    alert("Error removing user. Please try again later.");
-                });
-        });
+    // Create a button to remove the user
+    const removeButton = document.createElement("button");
+    removeButton.textContent = "Remove";
+    removeButton.addEventListener("click", () => {
+        // Call a function to remove the user from the server
+        removeUser(user.id)
+            .then(() => {
+                // Remove the list item from the DOM if the removal was successful
+                li.remove();
+            })
+            .catch(error => {
+                console.error("There was a problem removing the user:", error);
+                // Handle errors, show error message to the user, etc.
+                alert("Error removing user. Please try again later.");
+            });
+    });
 
-        // Create a button to edit the user
-        const editButton = document.createElement("button");
-        editButton.textContent = "Edit";
-        editButton.addEventListener("click", () => {
-            showEditForm(user, li);
-        });
+    // Create a button to edit the user
+    const editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+    editButton.addEventListener("click", () => {
+        showEditForm(user, li);
+    });
 
-        // Append the link, edit button, and remove button to the list item
-        li.appendChild(a);
-        li.appendChild(editButton);
-        li.appendChild(removeButton);
+    // Append the link, edit button, and remove button to the list item
+    li.appendChild(a);
+    li.appendChild(editButton);
+    li.appendChild(removeButton);
 
-        // Append the list item to the user list
-        ul.appendChild(li);
-    },
+    // Append the list item to the user list
+    ul.appendChild(li);
+},
 
     function showEditForm(user, li) {
         // Create a form for editing user details
@@ -136,28 +136,28 @@ form.addEventListener('submit', function(event) {
             body: JSON.stringify(updatedData)
         });
 
-    fetch('http://localhost:3500/users', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => {
+        fetch('http://localhost:3500/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => {
 
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Form data sent successfully:', data);
-        // Optionally, you can redirect the user to another page or show a success message
-    })
-    .catch(error => {
-        console.error('There was a problem with your fetch operation:', error);
-        // Handle errors, show error message to the user, etc.
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Form data sent successfully:', data);
+                // Optionally, you can redirect the user to another page or show a success message
+            })
+            .catch(error => {
+                console.error('There was a problem with your fetch operation:', error);
+                // Handle errors, show error message to the user, etc.
+            });
     });
-});
 
 
