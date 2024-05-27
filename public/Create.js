@@ -3,7 +3,9 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
 
 
     async function getAllUsers() {
+        console.log("getAllUsers function called");  // adding here the console.log as well for updates.
         const response = await fetch("http://localhost:3500/users");
+        
         if (!response.ok) {
             throw new Error("Network response was not ok");
         }
