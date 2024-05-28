@@ -6,10 +6,14 @@ console.log("ID:", id); // Check the value of the extracted ID
 <<<<<<< HEAD
 async function getUser(id) {
 =======
+<<<<<<< HEAD
+async function getUser(id) {
+=======
 
 async function getUser(id) {
 <<<<<<< HEAD
 >>>>>>> 3b1b36e9b6a99b6553a77679e0aa60c5b8d8acfa
+>>>>>>> shafik
   try {
     const response = await fetch(`http://localhost:3500/users/${id}`);
     if (!response.ok) {
@@ -23,12 +27,15 @@ async function getUser(id) {
   }
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 =======
   const response = await fetch(`http://localhost:3500/users/${id}`);
   const user = await response.json();
   return user;
 >>>>>>> shafik
 >>>>>>> 3b1b36e9b6a99b6553a77679e0aa60c5b8d8acfa
+>>>>>>> shafik
 }
 async function main() {
   if (id) {
@@ -48,11 +55,14 @@ async function main() {
   }
 }
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 main();
 document.getElementById('editButton').addEventListener('click', function () {
   console.log('Edit button clicked');x
 =======
 
+>>>>>>> shafik
 main();
 document.getElementById('editButton').addEventListener('click', function () {
 >>>>>>> 3b1b36e9b6a99b6553a77679e0aa60c5b8d8acfa
