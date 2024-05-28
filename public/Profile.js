@@ -25,17 +25,9 @@ async function getUser(id) {
     console.error('Error fetching user data:', error);
     return null; // or handle the error in a different way
   }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
   const response = await fetch(`http://localhost:3500/users/${id}`);
   const user = await response.json();
   return user;
->>>>>>> shafik
->>>>>>> 3b1b36e9b6a99b6553a77679e0aa60c5b8d8acfa
->>>>>>> shafik
 }
 async function main() {
   if (id) {
@@ -54,15 +46,10 @@ async function main() {
     console.error('ID parameter is undefined'); // Handle case where ID parameter is undefined
   }
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 main();
 document.getElementById('editButton').addEventListener('click', function () {
   console.log('Edit button clicked');x
-=======
 
->>>>>>> shafik
 main();
 document.getElementById('editButton').addEventListener('click', function () {
 >>>>>>> 3b1b36e9b6a99b6553a77679e0aa60c5b8d8acfa
