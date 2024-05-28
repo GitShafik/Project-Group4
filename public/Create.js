@@ -1,15 +1,20 @@
 document.getElementById('userForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
+<<<<<<< HEAD
+=======
 
     async function getAllUsers() {
+        console.log("getAllUsers function called");  // adding here the console.log as well for updates.
         const response = await fetch("http://localhost:3500/users");
+        
         if (!response.ok) {
             throw new Error("Network response was not ok");
         }
         const users = await response.json();
         return users;
     }
+>>>>>>> shafik
     // Get form inputs
     const username = document.getElementById('username').value;
     const firstname = document.getElementById('firstname').value;
@@ -23,7 +28,6 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
     if (!username || !firstname || !lastname || !age || !email || !password) {
         alert('Please fill in all fields.');
         return;
-
     }
 
     // Form data object
@@ -153,7 +157,7 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
     })
     .then(response => {
 
->>>>>>> 2f9bca541979139ce1490039c03af1a74be37bcd
+>>>>>>> shafik
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

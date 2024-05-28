@@ -2,11 +2,11 @@
 =======
 document.addEventListener("DOMContentLoaded", function () {
     const updateForm = document.getElementById("updateForm");
->>>>>>> shafik
 
 
 /*profile pic change*/
 
+>>>>>>> shafik
 document.getElementById('profilePicInput').addEventListener('change', function () {
     const file = this.files[0];
     if (file) {
@@ -16,10 +16,8 @@ document.getElementById('profilePicInput').addEventListener('change', function (
             this.value = ''; // Clear the input
             return;
         }
-
         // Create a FileReader object
         const reader = new FileReader();
-
 <<<<<<< HEAD
         // Set up FileReader onload event
         reader.onload = function (e) {
@@ -27,10 +25,10 @@ document.getElementById('profilePicInput').addEventListener('change', function (
             const profilePicture = document.querySelector('.profilePicture');
             profilePicture.src = e.target.result;
         };
-
         // Read the selected file as Data URL
         reader.readAsDataURL(file);
 =======
+
     async function fetchUser(userId) {
         const response = await fetch(`http://localhost:3500/users/${userId}`);
         if (!response.ok) {
@@ -54,9 +52,6 @@ document.getElementById('profilePicInput').addEventListener('change', function (
 >>>>>>> shafik
     }
 });
-
-
-
 const updateForm = document.getElementById("updateForm");
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get('id');
@@ -64,7 +59,6 @@ console.log(userId)
 // Fetch and populate the form with user data
 if (userId) {
     fetchUser(userId).then(user => {
-
         document.getElementById("username").value = user.username;
         document.getElementById("firstname").value = user.firstname;
         document.getElementById("lastname").value = user.lastname;
@@ -76,10 +70,8 @@ if (userId) {
         console.error("There was a problem fetching the user data:", error);
     });
 }
-
 updateForm.addEventListener("submit", function (event) {
     event.preventDefault();
-
     const updatedData = {
         username: document.getElementById("username").value,
         firstname: document.getElementById("firstname").value,
@@ -89,7 +81,6 @@ updateForm.addEventListener("submit", function (event) {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value,
         bio: document.getElementById("bio").value,
-
     };
     console.log(updatedData)
     updateUser(userId, updatedData)
@@ -102,7 +93,6 @@ updateForm.addEventListener("submit", function (event) {
             alert("Error updating user. Please try again later.");
         });
 });
-
 async function fetchUser(userId) {
     const response = await fetch(`http://localhost:3500/users/${userId}`);
 <<<<<<< HEAD
@@ -114,7 +104,6 @@ async function fetchUser(userId) {
     }
     return await response.json();
 }
-
 async function updateUser(userId, updatedData) {
 <<<<<<< HEAD
     //console.log("about to update", userId, updatedData)
@@ -140,93 +129,3 @@ document.addEventListener('DOMContentLoaded', function () {
     const id = params.get('id');
     // Perform any actions based on the selected ID, such as pre-filling form fields
 });
-
-
-
-
-
-
-
-
-
-/*document.addEventListener('DOMContentLoaded', function () {
-    const queryString = window.location.search;
-    const params = new URLSearchParams(queryString);
-    const userId = params.get('id');
-
-    async function fetchUser(id) {
-        const response = await fetch(`http://localhost:3500/users/${id}`);
-        if (!response.ok) {
-            throw new Error('Failed to fetch user data');
-        }
-        return response.json();
-    }
-
-    async function updateUser(id, updatedData) {
-        const response = await fetch(`http://localhost:3500/users/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedData)
-        });
-        if (!response.ok) {
-            throw new Error('Failed to update user data');
-        }
-        return response.json();
-    }
-
-    if (userId) {
-        fetchUser(userId).then(user => {
-            document.getElementById('username').value = user.username;
-            document.getElementById('firstname').value = user.firstname;
-            document.getElementById('lastname').value = user.lastname;
-            document.getElementById('age').value = user.age;
-            if (user.nickname) {
-                document.getElementById('nickname').value = user.nickname;
-            }
-            document.getElementById('email').value = user.email;
-            document.getElementById('password').value = user.password;
-            if (user.bio) {
-                document.getElementById('bio').value = user.bio;
-            }
-        }).catch(error => {
-            console.error('There was a problem fetching the user data:', error);
-        });
-    }
-
-    document.getElementById('updateForm').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const updatedData = {
-            username: document.getElementById('username').value,
-            firstname: document.getElementById('firstname').value,
-            lastname: document.getElementById('lastname').value,
-            age: document.getElementById('age').value,
-            nickname: document.getElementById('nickname').value,
-            email: document.getElementById('email').value,
-            password: document.getElementById('password').value,
-            bio: document.getElementById('bio').value
-        };
-
-        // Only send nickname and bio if they are not empty
-        if (!updatedData.nickname) {
-            delete updatedData.nickname;
-        }
-        if (!updatedData.bio) {
-            delete updatedData.bio;
-        }
-
-        updateUser(userId, updatedData)
-            .then(updatedUser => {
-                alert('User information updated successfully.');
-                // Redirect or perform other actions after successful update
-            })
-            .catch(error => {
-                console.error('There was a problem updating the user:', error);
-                alert('Error updating user. Please try again later.');
-            });
-    });
-});
-*/
-
-

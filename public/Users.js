@@ -16,6 +16,7 @@ getAllUsers()
 
 
 async function getAllUsers() {
+  console.log("Calling fetch to get users"); // added console.log here for the update.
   const response = await fetch("http://localhost:3500/users");
   if (!response.ok) {
       throw new Error("Network response was not ok");
