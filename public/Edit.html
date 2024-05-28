@@ -7,13 +7,9 @@
     <title>Breezy Shine | Edit Details</title>
     <link rel="stylesheet" href="style.css">
     <!-- <link rel="stylesheet" href="style1.css"> -->
-
-
-
 </head>
 
 <body>
-
     <nav class="container">
         <div class="navigation">
             <div class="items">
@@ -39,31 +35,23 @@
     <div>
         <!----------------------------edit profile starts from here-------------------------------->
         <br>
-
-
         <a href="Start.html"> <b>
                 <div class="backToProfile">Go back home</div>
             </b> </a>
         <h2><b>Basic Information</b></h2>
-
         <!-- Profile picture insertion with choose file button -->
         <div class="profilePictureContainer">
             <span><img src="profilepic.jpeg" alt="Profile Picture" class="profilePicture"> <button class="editButton"
                     onclick="document.getElementById('profilePicInput').click();">Edit</button></span>
             <input type="file" id="profilePicInput" accept="image/*" style="display: none;">
         </div>
-
         <!---------------------creating form------------------------------------->
-
         <form id="updateForm" class="form-container">
-
             <div class="formfontsize">
-
                 <div class="form-group">
                     <label for="username">User Name:</label>
                     <input class="formfontsize" type="text" id="username" name="username" autocomplete="username">
                 </div>
-
                 <div class="form-group">
                     <label for="firstname">First Name:</label>
                     <input class="formfontsize" type="text" id="firstname" name="firstname" autocomplete="given-name">
@@ -89,23 +77,10 @@
                 <div class="form-group"> <label for="Bio">Bio:</label>
                     <input class="formfontsize" id="bio" type="text" autocomplete="off" />
                 </div>
-
                 <button class="saveBox" type="submit">Save</button>
-
-
-
-
-
-
-
-
-
-
             </div>
         </form>
-
     </div>
-
     <script src="Edit.js"></script>
 </body>
 
