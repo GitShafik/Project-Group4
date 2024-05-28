@@ -1,13 +1,4 @@
-<<<<<<< HEAD
 /*profile pic change*/
-=======
-document.addEventListener("DOMContentLoaded", function () {
-    const updateForm = document.getElementById("updateForm");
-
-
-/*profile pic change*/
-
->>>>>>> b77a446937b5efd507d145a42c574920d8d91f4b
 document.getElementById('profilePicInput').addEventListener('change', function () {
     const file = this.files[0];
     if (file) {
@@ -19,7 +10,6 @@ document.getElementById('profilePicInput').addEventListener('change', function (
         }
         // Create a FileReader object
         const reader = new FileReader();
-<<<<<<< HEAD
 
         // Set up FileReader onload event
         reader.onload = function (e) {
@@ -29,8 +19,6 @@ document.getElementById('profilePicInput').addEventListener('change', function (
         };
         // Read the selected file as Data URL
         reader.readAsDataURL(file);
-=======
->>>>>>> b77a446937b5efd507d145a42c574920d8d91f4b
 
 
         async function fetchUser(userId) {
@@ -55,10 +43,6 @@ document.getElementById('profilePicInput').addEventListener('change', function (
             return response.json();
 
         }
-<<<<<<< HEAD
-=======
-        return response.json();
->>>>>>> b77a446937b5efd507d145a42c574920d8d91f4b
     }
 });
 const updateForm = document.getElementById("updateForm");
@@ -114,27 +98,20 @@ updateForm.addEventListener("submit", function (event) {
 });
 async function fetchUser(userId) {
     const response = await fetch(`http://localhost:3500/users/${userId}`);
-<<<<<<< HEAD
 
     //console.log(response.status)
 
-=======
->>>>>>> b77a446937b5efd507d145a42c574920d8d91f4b
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
     return await response.json();
 }
 async function updateUser(userId, updatedData) {
-<<<<<<< HEAD
 
     //console.log("about to update", userId, updatedData)
 
     console.log("about to update", userId, updatedData)
 
-=======
-    console.log("about to update", userId, updatedData)
->>>>>>> b77a446937b5efd507d145a42c574920d8d91f4b
     const response = await fetch(`http://localhost:3500/users/${userId}`, {
         method: 'PUT',
         headers: {
