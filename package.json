@@ -19,5 +19,8 @@
 
     "mysql2": "^3.9.7",
     "selenium-webdriver": "^4.21.0"
+
+   
+
   }
 }
