@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.getElementById('userForm').addEventListener('submit', async function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
@@ -20,15 +21,32 @@ document.getElementById('userForm').addEventListener('submit', async function (e
     const email = document.getElementById('email').value;
     const bio = document.getElementById('bio').value;
     const password = document.getElementById('password').value;
+=======
+document
+  .getElementById("userForm")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+
+    const username = document.getElementById("username").value;
+    const firstname = document.getElementById("firstname").value;
+    const lastname = document.getElementById("lastname").value;
+    const age = document.getElementById("age").value;
+    const email = document.getElementById("email").value;
+    const bio = document.getElementById("bio").value;
+    const password = document.getElementById("password").value;
+
+>>>>>>> b77a446937b5efd507d145a42c574920d8d91f4b
 
     // Validate form inputs (you can add more validation logic here)
     if (!username || !firstname || !lastname || !age || !email || !password) {
-        alert('Please fill in all fields.');
-        return;
+      alert("Please fill in all fields.");
+      return;
     }
 
     // Form data object
     const formData = {
+<<<<<<< HEAD
         username,
         firstname,
         lastname,
@@ -56,12 +74,35 @@ document.getElementById('userForm').addEventListener('submit', async function (e
         // Assuming there is an element with id 'userList' to append the new user to
         const ul = document.getElementById('userList');
         const li = document.createElement("li");
+=======
+      username,
+      firstname,
+      lastname,
+      age: parseInt(age),
+      email,
+      bio,
+      password,
+    };
 
-        // Create a link to the user's profile
-        const a = document.createElement("a");
-        a.setAttribute("href", `profile.html?id=${user.id}`);
-        a.textContent = user.firstname; // Display only the first name as the link text
 
+    await createUser(formData);
+  });
+>>>>>>> b77a446937b5efd507d145a42c574920d8d91f4b
+
+async function createUser(userData) {
+  try {
+    const response = await fetch(`http://localhost:3500/users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
+    console.log(response.status, response);
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+
+<<<<<<< HEAD
         // Create a button to remove the user
         const removeButton = document.createElement("button");
         removeButton.textContent = "Remove";
@@ -181,5 +222,14 @@ document.getElementById('userForm').addEventListener('submit', async function (e
         }
 
         return response.json();
+=======
+>>>>>>> b77a446937b5efd507d145a42c574920d8d91f4b
     }
-});
+    const data = await response.json();
+    console.log("Form data sent successfully:", data);
+    alert("User created successfully");
+  } catch (error) {
+    console.error("There was a problem with your fetch operation:", error);
+    alert("Failed to create user. Please try again.");
+  }
+}
