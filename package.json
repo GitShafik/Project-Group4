@@ -11,8 +11,15 @@
   "author": "Shafik Khan",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+<<<<<<< HEAD
+    "json-server": "^1.0.0-alpha.23",
+    "mysql": "^2.18.1",
+=======
+>>>>>>> 2f9bca541979139ce1490039c03af1a74be37bcd
     "mysql2": "^3.9.7"
   }
 }
+  

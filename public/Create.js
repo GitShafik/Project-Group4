@@ -1,8 +1,4 @@
-// Get a reference to the form element
-const form = document.querySelector('form');
-
-// Add an event listener for the form submission
-form.addEventListener('submit', function(event) {
+document.getElementById('userForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
 
@@ -15,12 +11,13 @@ form.addEventListener('submit', function(event) {
         return users;
     }
     // Get form inputs
-    const username = form.elements['username'].value;
-    const firstname = form.elements['firstname'].value;
-    const lastname = form.elements['lastname'].value;
-    const age = form.elements['age'].value;
-    const email = form.elements['email'].value;
-    const password = form.elements['password'].value;
+    const username = document.getElementById('username').value;
+    const firstname = document.getElementById('firstname').value;
+    const lastname = document.getElementById('lastname').value;
+    const age = document.getElementById('age').value;
+    const email = document.getElementById('email').value;
+    const bio = document.getElementById('bio').value;
+    const password = document.getElementById('password').value;
 
     // Validate form inputs (you can add more validation logic here)
     if (!username || !firstname || !lastname || !age || !email || !password) {
@@ -29,17 +26,28 @@ form.addEventListener('submit', function(event) {
 
     }
 
-    // If all inputs are filled, you can proceed with form submission or other actions
-    // For example, you can send the form data to the server using fetch API
+    // Form data object
     const formData = {
         username,
         firstname,
         lastname,
-        age,
+        age: parseInt(age), 
         email,
-        password
+        bio
     };
 
+<<<<<<< HEAD
+    // Send data to the server
+    try {
+        const response = await fetch('http://localhost:3500/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+=======
 
         // Create a link to the user's profile
         const a = document.createElement("a");
@@ -145,19 +153,17 @@ form.addEventListener('submit', function(event) {
     })
     .then(response => {
 
+>>>>>>> 2f9bca541979139ce1490039c03af1a74be37bcd
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json();
-    })
-    .then(data => {
+
+        const data = await response.json();
         console.log('Form data sent successfully:', data);
-        // Optionally, you can redirect the user to another page or show a success message
-    })
-    .catch(error => {
+        alert('User created successfully');
+        // Optionally, redirect or show success message
+    } catch (error) {
         console.error('There was a problem with your fetch operation:', error);
-        // Handle errors, show error message to the user, etc.
-    });
+        alert('Failed to create user. Please try again.');
+    }
 });
-
-

@@ -7,6 +7,7 @@ app.use(express.static("public"));
 app.use(express.json());
 
 let connection = null;
+
 async function connectDB() {
   try {
     connection = await mysql.createConnection({
@@ -15,17 +16,23 @@ async function connectDB() {
       host: "localhost",
       database: "breezy-users",
     });
+    console.log("Connected to the database");
   } catch (error) {
-    console.error("Something went wrong with connecting to db", error);
+    console.error("Something went wrong with connecting to the database", error);
   }
 }
+
 connectDB();
 
-// REST API route
-
-app.get("/users", async function (req, res) {
-  const [users] = await connection.query("SELECT * FROM users");
-  res.json(users);
+// REST API routes
+app.get("/users", async (req, res) => {
+  try {
+    const [users] = await connection.query("SELECT * FROM users");
+    res.json(users);
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
 app.get("/users/:id", async function (req, res) {
@@ -47,6 +54,33 @@ app.post("/users", async function (req, res) {
   }
 });
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+const server = app.listen(5000, () => {
+  console.log("Server started listening on localhost:5000");
+=======
+const server = app.listen(3500, () => {
+  console.log("Server started listening on localhost:3500");
+>>>>>>> shafik
+});
+
+// Gracefully shutdown the server
+process.on('SIGINT', async () => {
+  console.log('Stopping server...');
+  try {
+    if (connection) {
+      await connection.end(); // Close the database connection
+    }
+    server.close(() => {
+      console.log('Server stopped.');
+      process.exit(0);
+    });
+  } catch (error) {
+    console.error('Error occurred during shutdown:', error);
+    process.exit(1);
+  }
+});
+=======
 app.listen(3500, function () {
   console.log("started listeing on localhost:3500");
 });*/
@@ -145,16 +179,6 @@ app.put("/users/:id", async function (req, res) {
 app.listen(3500, function () {
   console.log("Started listening on localhost:3500");
 });
-
-
-
-
-
-
-
-
-
-
 
 
 
