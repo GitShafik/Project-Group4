@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 
 
 
 //---the below code is working properly and it suppose to work for other html files as well---------------------------------------------------------------//
 
+=======
+>>>>>>> 966c4e3c97f266ac4bb03ddc519576a603c868b8
 const express = require("express");
 const mysql = require("mysql2/promise");
 
