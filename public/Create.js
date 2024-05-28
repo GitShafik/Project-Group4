@@ -1,28 +1,17 @@
-<<<<<<< HEAD
-// Get a reference to the form element
-const form = document.querySelector('form');
-
-// Add an event listener for the form submission
-form.addEventListener('submit', function (event) {
-=======
-document.getElementById('userForm').addEventListener('submit', async function(event) {
->>>>>>> 1d575f790d24e6eaf35acac0529b7ccf1b7cd163
+document.getElementById('userForm').addEventListener('submit', async function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
-
-<<<<<<< HEAD
-=======
 
     async function getAllUsers() {
         console.log("getAllUsers function called");  // adding here the console.log as well for updates.
         const response = await fetch("http://localhost:3500/users");
-        
+
         if (!response.ok) {
             throw new Error("Network response was not ok");
         }
         const users = await response.json();
         return users;
     }
->>>>>>> shafik
+
     // Get form inputs
     const username = document.getElementById('username').value;
     const firstname = document.getElementById('firstname').value;
@@ -43,12 +32,11 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
         username,
         firstname,
         lastname,
-        age: parseInt(age), 
+        age: parseInt(age),
         email,
         bio
     };
 
-<<<<<<< HEAD
     // Send data to the server
     try {
         const response = await fetch('http://localhost:3500/users', {
@@ -59,45 +47,60 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
             body: JSON.stringify(formData)
         });
 
-=======
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
 
-    // Create a link to the user's profile
-    const a = document.createElement("a");
-    a.setAttribute("href", `profile.html?id=${user.id}`);
-    a.textContent = user.firstname; // Display only the first name as the link text
+        const user = await response.json();
 
-    // Create a button to remove the user
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    removeButton.addEventListener("click", () => {
-        // Call a function to remove the user from the server
-        removeUser(user.id)
-            .then(() => {
-                // Remove the list item from the DOM if the removal was successful
-                li.remove();
-            })
-            .catch(error => {
-                console.error("There was a problem removing the user:", error);
-                // Handle errors, show error message to the user, etc.
-                alert("Error removing user. Please try again later.");
-            });
-    });
+        // Assuming there is an element with id 'userList' to append the new user to
+        const ul = document.getElementById('userList');
+        const li = document.createElement("li");
 
-    // Create a button to edit the user
-    const editButton = document.createElement("button");
-    editButton.textContent = "Edit";
-    editButton.addEventListener("click", () => {
-        showEditForm(user, li);
-    });
+        // Create a link to the user's profile
+        const a = document.createElement("a");
+        a.setAttribute("href", `profile.html?id=${user.id}`);
+        a.textContent = user.firstname; // Display only the first name as the link text
 
-    // Append the link, edit button, and remove button to the list item
-    li.appendChild(a);
-    li.appendChild(editButton);
-    li.appendChild(removeButton);
+        // Create a button to remove the user
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.addEventListener("click", () => {
+            // Call a function to remove the user from the server
+            removeUser(user.id)
+                .then(() => {
+                    // Remove the list item from the DOM if the removal was successful
+                    li.remove();
+                })
+                .catch(error => {
+                    console.error("There was a problem removing the user:", error);
+                    // Handle errors, show error message to the user, etc.
+                    alert("Error removing user. Please try again later.");
+                });
+        });
 
-    // Append the list item to the user list
-    ul.appendChild(li);
-},
+        // Create a button to edit the user
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
+        editButton.addEventListener("click", () => {
+            showEditForm(user, li);
+        });
+
+        // Append the link, edit button, and remove button to the list item
+        li.appendChild(a);
+        li.appendChild(editButton);
+        li.appendChild(removeButton);
+
+        // Append the list item to the user list
+        ul.appendChild(li);
+
+        console.log('Form data sent successfully:', user);
+        alert('User created successfully');
+        // Optionally, redirect or show success message
+    } catch (error) {
+        console.error('There was a problem with your fetch operation:', error);
+        alert('Failed to create user. Please try again.');
+    }
 
     function showEditForm(user, li) {
         // Create a form for editing user details
@@ -127,25 +130,26 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
         saveButton.textContent = "Save";
         form.appendChild(saveButton);
 
-        form.addEventListener("submit", (event) => {
+        form.addEventListener("submit", async (event) => {
             event.preventDefault();
-            updateUser(user.id, {
-                firstname: nameInput.value,
-                age: ageInput.value,
-                bio: bioInput.value,
-                nickname: nicknameInput.value
-            }).then(updatedUser => {
+            try {
+                const updatedUser = await updateUser(user.id, {
+                    firstname: nameInput.value,
+                    age: ageInput.value,
+                    bio: bioInput.value,
+                    nickname: nicknameInput.value
+                });
                 li.querySelector("a").textContent = updatedUser.firstname;
                 li.removeChild(form);
-            }).catch(error => {
+            } catch (error) {
                 console.error("There was a problem updating the user:", error);
                 alert("Error updating user. Please try again later.");
-            });
+            }
         });
 
         // Append the form to the list item
         li.appendChild(form);
-    },
+    }
 
     async function updateUser(userId, updatedData) {
         const response = await fetch(`http://localhost:3500/users/${userId}`, {
@@ -156,45 +160,26 @@ document.getElementById('userForm').addEventListener('submit', async function(ev
             body: JSON.stringify(updatedData)
         });
 
-        fetch('http://localhost:3500/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
-            .then(response => {
-
-<<<<<<< HEAD
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Form data sent successfully:', data);
-                // Optionally, you can redirect the user to another page or show a success message
-            })
-            .catch(error => {
-                console.error('There was a problem with your fetch operation:', error);
-                // Handle errors, show error message to the user, etc.
-            });
-    });
-
-
-=======
->>>>>>> shafik
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
 
-        const data = await response.json();
-        console.log('Form data sent successfully:', data);
-        alert('User created successfully');
-        // Optionally, redirect or show success message
-    } catch (error) {
-        console.error('There was a problem with your fetch operation:', error);
-        alert('Failed to create user. Please try again.');
+        const updatedUser = await response.json();
+        return updatedUser;
+    }
+
+    async function removeUser(userId) {
+        const response = await fetch(`http://localhost:3500/users/${userId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        return response.json();
     }
 });
->>>>>>> 1d575f790d24e6eaf35acac0529b7ccf1b7cd163

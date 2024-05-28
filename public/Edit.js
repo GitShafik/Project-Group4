@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-/* Profile pic change */
-=======
-<<<<<<< HEAD
-=======
-document.addEventListener("DOMContentLoaded", function () {
-    const updateForm = document.getElementById("updateForm");
-
-
 /*profile pic change*/
-
->>>>>>> shafik
->>>>>>> 1d575f790d24e6eaf35acac0529b7ccf1b7cd163
 document.getElementById('profilePicInput').addEventListener('change', function () {
     const file = this.files[0];
     if (file) {
@@ -22,7 +10,7 @@ document.getElementById('profilePicInput').addEventListener('change', function (
         }
         // Create a FileReader object
         const reader = new FileReader();
-<<<<<<< HEAD
+
         // Set up FileReader onload event
         reader.onload = function (e) {
             // Change the profile picture source
@@ -31,35 +19,32 @@ document.getElementById('profilePicInput').addEventListener('change', function (
         };
         // Read the selected file as Data URL
         reader.readAsDataURL(file);
-=======
 
-    async function fetchUser(userId) {
-        const response = await fetch(`http://localhost:3500/users/${userId}`);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    }
 
-    async function updateUser(userId, updatedData) {
-        const response = await fetch(`http://localhost:3500/users/${userId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(updatedData)
-        });
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+        async function fetchUser(userId) {
+            const response = await fetch(`http://localhost:3500/users/${userId}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
         }
-        return response.json();
->>>>>>> shafik
+
+        async function updateUser(userId, updatedData) {
+            const response = await fetch(`http://localhost:3500/users/${userId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(updatedData)
+            });
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+
+        }
     }
 });
-<<<<<<< HEAD
-
-=======
->>>>>>> 1d575f790d24e6eaf35acac0529b7ccf1b7cd163
 const updateForm = document.getElementById("updateForm");
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get('id');
@@ -113,21 +98,20 @@ updateForm.addEventListener("submit", function (event) {
 });
 async function fetchUser(userId) {
     const response = await fetch(`http://localhost:3500/users/${userId}`);
-<<<<<<< HEAD
+
     //console.log(response.status)
-=======
->>>>>>> shafik
+
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
     return await response.json();
 }
 async function updateUser(userId, updatedData) {
-<<<<<<< HEAD
+
     //console.log("about to update", userId, updatedData)
-=======
+
     console.log("about to update", userId, updatedData)
->>>>>>> shafik
+
     const response = await fetch(`http://localhost:3500/users/${userId}`, {
         method: 'PUT',
         headers: {
@@ -147,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const params = new URLSearchParams(queryString);
     const id = params.get('id');
     // Perform any actions based on the selected ID, such as pre-filling form fields
-<<<<<<< HEAD
+
 });
 
 // Ensure nickname and bio are shown on edit page if they exist
@@ -190,6 +174,5 @@ document.getElementById('editButton').addEventListener('click', function () {
     const params = new URLSearchParams(queryString);
     const id = params.get('id');
     window.location.href = `Edit.html?id=${id}`; // Redirect to the edit page with the selected ID
-=======
->>>>>>> 1d575f790d24e6eaf35acac0529b7ccf1b7cd163
+
 });
