@@ -60,7 +60,7 @@ app.get("/users/:id", async (req, res) => {
 
 // Create a new user
 app.post("/users", async (req, res) => {
-  const { username, firstname, lastname, age, email, password, bio, nickname } =
+  const { username, firstname, lastname, age, email, password, bio } =
     req.body;
 
   if (!username || !firstname || !lastname || !email) {
@@ -70,34 +70,22 @@ app.post("/users", async (req, res) => {
   }
 
   const query =
-    "INSERT INTO users (username, firstname, lastname, age, nickname, email, password, bio) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    "INSERT INTO users (username, firstname, lastname, age, email, password, bio) VALUES (?, ?, ?, ?, ?, ?, ?)";
   const values = [
     username,
     firstname,
     lastname,
     age,
-    nickname,
     email,
     password,
     bio,
   ];
 
   try {
-    const [result] = await connection.query(
-      "INSERT INTO users (username, firstname, lastname, age, email, password, bio) VALUES (?, ?, ?, ?, ?, ?, ?)",
-      [
-        newUser.username,
-        newUser.firstname,
-        newUser.lastname,
-        newUser.age,
-        newUser.email,
-        newUser.password,
-        newUser.bio,
-      ]
-    );
+    const [result] = await connection.query(query, values);
     res
       .status(201)
-      .json({ ID: result.insertId, Name: newUser.name, Age: newUser.age });
+      .json({ ID: result.insertId, Name: username, Age: age });
   } catch (error) {
     console.error("Error inserting user:", error);
     res.status(500).json({ error: "Internal Server Error" });

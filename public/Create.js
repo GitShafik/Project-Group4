@@ -56,3 +56,4 @@ async function createUser(userData) {
     alert("Failed to create user. Please try again.");
   }
 }
+
