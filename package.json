@@ -3,8 +3,16 @@
   "version": "1.0.0",
   "description": "school assignment\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[DTest\u001b[C\u001b\u001b[C\u001b[C\u001b[C\u001b[C\u001b\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[ assignment",
   "main": "server.js",
+<<<<<<< HEAD
   "directories": {
     "test": "tests"
+=======
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest",
+    "test:unit": "jest __test__/unit.test.js",
+    "test:integration": "jest __test__/integration.test.js"
+>>>>>>> 2512d74619128aa36d45cc5da0b539613fd5bc4c
   },
   "scripts": {
     "test": "jest",
@@ -21,14 +29,25 @@
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+<<<<<<< HEAD
     "json": "^11.0.0",
     "json-server": "^1.0.0-beta.0",
     "mysql": "^2.18.1",
     "mysql2": "^3.9.8",
+=======
+    "json-server": "^1.0.0-alpha.23",
+    "mysql2": "^3.9.7",
+>>>>>>> 2512d74619128aa36d45cc5da0b539613fd5bc4c
     "regenerator-runtime": "^0.14.1",
     "selenium-webdriver": "^4.21.0",
     "supertest": "^7.0.0"
   },
+<<<<<<< HEAD
+=======
+  "directories": {
+    "test": "tests"
+  },
+>>>>>>> 2512d74619128aa36d45cc5da0b539613fd5bc4c
   "devDependencies": {
     "jest": "^29.7.0",
     "mocha": "^10.4.0"
