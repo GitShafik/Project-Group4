@@ -1,14 +1,10 @@
-<<<<<<< HEAD
 
 const express = require("express");
 const mysql = require("mysql2/promise");
-=======
 const app = require('./app');
->>>>>>> 2512d74619128aa36d45cc5da0b539613fd5bc4c
 
 const PORT = process.env.PORT || 3500;
 
-<<<<<<< HEAD
 app.use(express.static("public"));
 app.use(express.json());
 
@@ -119,10 +115,8 @@ app.put("/users/:id", async (req, res) => {
 
 const server = app.listen(3500, () => {
   console.log("Server started listening on localhost:3500");
-=======
 const server = app.listen(PORT, () => {
   console.log(`Server started listening on localhost:${PORT}`);
->>>>>>> 2512d74619128aa36d45cc5da0b539613fd5bc4c
 });
 
 // Gracefully shutdown the server
@@ -141,3 +135,4 @@ process.on('SIGINT', async () => {
     process.exit(1);
   }
 });
+})

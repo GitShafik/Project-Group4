@@ -46,16 +46,4 @@ async function createUser(userData) {
         console.error("There was a problem with your fetch operation:", error);
         alert("Failed to create user. Please try again.");
     }
-<<<<<<< HEAD
-    const data = await response.json();
-    console.log("Form data sent successfully:", data);
-    alert("User created successfully");
-  } catch (error) {
-    console.error("There was a problem with your fetch operation:", error);
-    alert("Failed to create user. Please try again.");
   }
-}
-
-=======
-}
->>>>>>> 2512d74619128aa36d45cc5da0b539613fd5bc4c
