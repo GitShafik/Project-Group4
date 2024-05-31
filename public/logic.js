@@ -15,7 +15,6 @@ async function fetchUserById(userId) {
     const connection = await db.connectDB();
     const [users] = await connection.query(
       "SELECT * FROM users WHERE user_id = ?",
-    
       [userId]
     );
     return users.length > 0 ? users[0] : null;
@@ -49,24 +48,22 @@ async function updateUserById(userId, updatedData) {
     connection.release(); // Release the connection
     return result.affectedRows > 0; // Return true if user updated successfully
   } catch (error) {
-    console.error("Error updating user:", error);
+    console.error("Error updating user:, error");
     throw new Error("Internal Server Error");
   }
 }
 async function deleteUserById(userId) {
   try {
     const connection = await db.connectDB();
-    const [result] = await connection.query(
+    const jsonResult = await connection.query(
       "DELETE FROM users WHERE user_id = ?",
       [userId]
     );
-  
-
-    //connection.release();
-    console.log(result);
-    return result.ResultSetHeader.affectedRows > 0;
+    const result = JSON.parse(JSON.stringify(jsonResult));
+    // Check if ResultSetHeader exists and affectedRows is greater than 0
+    return result && result[0] && result[0].affectedRows > 0;
   } catch (error) {
-    console.error("Error updating user:", error);
+    console.error("Error deleting user:", error);
     throw new Error("Internal Server Error");
   }
 }
@@ -77,14 +74,3 @@ module.exports = {
   updateUserById,
   deleteUserById,
 };
-
-
-
-
-
-
-
-
-
-
-
