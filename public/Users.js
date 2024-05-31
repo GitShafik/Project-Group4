@@ -3,15 +3,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Fetch users data from the server
   getAllUsers()
-<<<<<<< HEAD
-    .then(users => {
-      // Populate the user list with fetched data
-      users.forEach(user => {
-        appendToList(userList, user);
-      });
-    })
-    .catch(error => {
-=======
     .then((users) => {
       // Populate the user list with fetched data
       users.forEach((user) => {
@@ -19,15 +10,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       });
     })
     .catch((error) => {
->>>>>>> 966c4e3c97f266ac4bb03ddc519576a603c868b8
       console.error("There was a problem with fetching users:", error);
       // Handle errors, show error message to the user, etc.
     });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 966c4e3c97f266ac4bb03ddc519576a603c868b8
   async function getAllUsers() {
     console.log("Calling fetch to get users"); // added console.log here for the update.
     const response = await fetch("http://localhost:3500/users");
@@ -40,18 +26,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function appendToList(ul, user) {
     const li = document.createElement("li");
-<<<<<<< HEAD
-
-    // Create a link to the user's profile
-    const a = document.createElement("a");
-    a.setAttribute("href", `profile.html?id=${user.id}`);
-=======
     console.log(user);
 
     // Create a link to the user's profile
     const a = document.createElement("a");
     a.setAttribute("href", `profile.html?id=${user.user_id}`);
->>>>>>> 966c4e3c97f266ac4bb03ddc519576a603c868b8
     a.textContent = user.firstname; // Display only the first name as the link text
 
     // Create a button to remove the user
@@ -81,24 +60,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Send a request to the backend to remove the user from the database
     fetch(`http://localhost:3500/users/${userId}`, {
-<<<<<<< HEAD
-      method: 'DELETE'
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log('User removed successfully:', data);
-      })
-      .catch(error => {
-        console.error('There was a problem removing the user:', error);
-      });
-  }
-});
-=======
       method: "DELETE",
     })
       .then((response) => {
@@ -115,4 +76,3 @@ document.addEventListener("DOMContentLoaded", async function () {
       });
   }
 });
->>>>>>> 966c4e3c97f266ac4bb03ddc519576a603c868b8
